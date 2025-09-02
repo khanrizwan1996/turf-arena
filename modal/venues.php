@@ -21,6 +21,22 @@ class Venues
         return $result->fetch_all(MYSQLI_ASSOC);
 
     }
+    public function getVenueSearch($searchKeyword,$searchBy){
+        $search    = isset($searchKeyword) ?  $searchKeyword: '';
+        $filter_by = isset($searchBy) ? $searchBy : '';
+        $sql = "SELECT * FROM venues WHERE vnu_status = 1";
+        if ($search != '') {
+            if ($filter_by == "vnu_state" || $filter_by == "vnu_city" || $filter_by == "vnu_area") {
+                $sql .= " AND $filter_by LIKE '%$search%'";
+            } else {
+                $sql .= " AND (vnu_state LIKE '%$search%' 
+                        OR vnu_city LIKE '%$search%' 
+                        OR vnu_area LIKE '%$search%')";
+            }
+        }
+        $result = $this->conn->query($sql);
+        return $result->fetch_assoc();
+    }
 
     public function getVenueDetailById($venueId){
         $sql ="SELECT vnu_id,vnu_name,vnu_mobile,vnu_email,vnu_whatsapp,vnu_address,vnu_area,vnu_city,vnu_pincode,vnu_state,vnu_maplink,vnu_image,vnu_contactname,vnu_aboutus,vnu_added_time FROM venues where vnu_name ='$venueId'";
@@ -28,4 +44,5 @@ class Venues
         return $result->fetch_assoc();
     }
 }
+
 ?>
