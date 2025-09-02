@@ -1,0 +1,131 @@
+.profile {
+  position: relative;
+  cursor: pointer;
+}
+.profile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.customDropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  z-index: 1000;
+}
+.customDropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+.customDropdown a:hover {
+  background: #f5f6fa;
+}
+.customDropdown.show {
+  display: block;
+}
+
+.sidebar {
+  width: 220px;
+  /* background: #fff; */
+  border-right: 1px solid #ddd;
+  padding: 20px 10px;
+}
+.sidebar h3 {
+  margin: 0 0 15px;
+  font-size: 16px;
+  color: #444;
+}
+.sidebar a {
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.sidebar a:hover,
+.sidebar a.active {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.user-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.user-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.user-card h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.customBox {
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.29) 0px 1px 10px;
+  background: rgb(255, 255, 255);
+  display: flow-root;
+  border-radius: 12px;
+}
+table.dataTable th {
+  background-color: #ec4c1f;
+  color: white;
+  font-weight: bold;
+}
+
+.dataTables_paginate a {
+  background-color: #ec4c1f;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.dataTables_paginate a:hover {
+  background-color: #ec4c1f;
+}
+
+ .customMarginLeft28{
+    margin-left: 28px;
+}
+
+@media (max-width: 768px) {
+  .customMarginLeft28 {
+    margin-left: 0px;   /* reset to default */
+    /* or */
+        /* any override you want */
+  }
+}
