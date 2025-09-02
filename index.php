@@ -19,19 +19,18 @@
                                         <div class="tab-content">
                                             <div class="tab-pane fade active show" id="buy" role="tabpanel"
                                                 aria-labelledby="buy-tab">
+                                                <form action="search.php" method="POST">
                                                 <div class=" search__container">
                                                     <div class="row input-group no-gutters">
                                                         <div class="col-lg-6">
-                                                            <input type="text" class="form-control" placeholder="Enter your Keyword">
+                                                            <input type="text" class="form-control" name="search" placeholder="Enter your Keyword">
                                                         </div>
                                                         <div class="col-lg-2">
-                                                            <select class="select_option form-control" name="select">
-                                                                <option data-display="Locations">Locations</option>
-                                                                <option>United Kingdom</option>
-                                                                <option>American Samoa</option>
-                                                                <option>Belgium</option>
-                                                                <option>Canada</option>
-                                                                <option>Delaware</option>
+                                                            <select class="select_option form-control" name="filter_by">
+                                                                <option value="">All</option>
+                                                                <option value="vnu_state">State</option>
+                                                                <option value="vnu_city">City</option>
+                                                                <option value="vnu_area">Area</option>
 
                                                             </select>
                                                         </div>
@@ -43,6 +42,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </form>
                                             </div>
                                             <div class="tab-pane fade" id="rent" role="tabpanel"
                                                 aria-labelledby="rent-tab">
@@ -307,4 +307,5 @@
             </div>
         </div>
     </section>
+
 <?php require('footer.php'); ?>
